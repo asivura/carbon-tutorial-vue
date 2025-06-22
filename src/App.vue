@@ -1,6 +1,20 @@
+<script>
+import TutorialHeader from './components/TutorialHeader';
+
+export default {
+  name: 'App',
+  components: {
+    TutorialHeader
+  }
+};
+</script>
+
 <template>
   <div id="app">
-    <CvButton>Button</CvButton>
+    <tutorial-header />
+    <cv-content id="#main-content">
+      <router-view />
+    </cv-content>
   </div>
 </template>
 
