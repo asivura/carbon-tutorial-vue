@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
     "ci-check": "yarn format:diff",
     "format:diff": "prettier --list-different \"src/**/*.{js,vue,scss}\"",
     "lint": "vue-cli-service lint",
@@ -64,7 +64,9 @@
       "json",
       "vue"
     ],
-    "setupFiles": ["./tests/setup.js"],
+    "setupFiles": [
+      "./tests/setup.js"
+    ],
     "transform": {
       "^.+\\.vue$": "vue-jest",
       ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
